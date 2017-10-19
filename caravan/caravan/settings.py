@@ -25,7 +25,7 @@ SECRET_KEY = '!)vdwhc13lxzzq98*9t8-!x#l!j5o8$ppo0j^o7_=d6hl**&a)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,6 +42,12 @@ INSTALLED_APPS = [
     'cars',
     'users',
 ]
+
+"""REST_FRAMEWORK = {
+
+    'PAGE_SIZE': 10
+
+}"""
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
