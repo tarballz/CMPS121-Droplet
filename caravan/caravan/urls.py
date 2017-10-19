@@ -16,17 +16,30 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
-from teams.views import TeamViewSet
-from cars.views import CarViewSet
-from users.views import UserViewSet
+from teams import views
+# from teams.views import TeamViewSet
+# from cars.views import CarViewSet
+# from users.views import UserViewSet
 
 router = routers.DefaultRouter()
-router.register(r'teams', TeamViewSet)
-router.register(r'cars', CarViewSet)
-router.register(r'users', UserViewSet)
+router.register(r'teams', views.TeamViewSet)
+# router.register(r'cars', CarViewSet)
+# router.register(r'users', UserViewSet)
+
+# team_list = TeamViewSet.as_view({
+#     'get': 'list',
+#     'post': 'create'
+# })
+#
+# team_detail = TeamViewSet.as_view({
+#     'get': 'retrieve',
+#     'put': 'update',
+#     'patch': 'partial_update',
+#     'delete': 'destroy'
+# })
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include(router.urls)),
-    url(r'^', include('teams.urls')),
+    # url(r'^', include('teams.urls')),
 ]

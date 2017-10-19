@@ -10,3 +10,7 @@ class Team(models.Model):
 
     def __str__(self):
         return self.name
+
+def save(self, *args, **kwargs):
+    options = self.name and {'title': self.title} or {}
+    super(Team, self).save(*args, **kwargs)
